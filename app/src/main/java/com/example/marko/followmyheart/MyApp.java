@@ -14,4 +14,14 @@ public class MyApp extends AppCompatActivity {
 
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        /**
+         * 由于是单Activity架构
+         * 当前Activity退出后，整个应用就退出了，所以做垃圾回收的操作
+         */
+        System.gc();
+        System.runFinalization();
+    }
 }

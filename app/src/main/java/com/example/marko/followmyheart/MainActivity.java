@@ -1,11 +1,15 @@
 package com.example.marko.followmyheart;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.widget.FrameLayout;
 
+import com.example.marko.followmyheart.activity.OriginalSectionActivity;
 import com.example.marko.followmyheart.adapter.section.SectionBean;
 import com.example.marko.followmyheart.adapter.section.SectionRecyclerViewAdapter;
 
@@ -43,7 +47,7 @@ public class MainActivity extends MyApp {
         adapter.setOnItemChildClickListener((adapter, view, position) -> {
             switch (position) {
                 case 0:
-                    Log.e("enheng", "点击了");
+                    switchActivity(OriginalSectionActivity.class);
                     break;
                 default:
                     break;
@@ -62,5 +66,15 @@ public class MainActivity extends MyApp {
         datas.add(new SectionBean(R.drawable.subway, "地铁查询"));
         datas.add(new SectionBean(R.drawable.icon_duijiang, "兑券中心"));
         return datas;
+    }
+
+    private void switchFragment(Fragment fragment){
+        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+        fragmentTransaction.replace(R.id.fl_recycler_view,fragment)
+                .commit();
+    }
+    private void switchActivity(Class activity){
+        Intent intent = new Intent(this,activity);
+        startActivity(intent);
     }
 }

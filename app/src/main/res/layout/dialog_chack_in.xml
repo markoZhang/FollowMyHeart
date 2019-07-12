@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+       android:layout_centerInParent="true"
+        android:src="@drawable/pic_checkin_bg" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true">
+
+    <LinearLayout
+        android:id="@+id/lv_checkin_dialog"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_checkin"
+        android:layout_marginTop="32.5dp"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:id="@+id/tv_integral_value"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="62.5dp"
+            android:layout_marginBottom="40dp"
+            android:text="签到成功"
+            android:textColor="#222222"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+
+
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/pic_checkin_success"
+        android:layout_centerHorizontal="true"/>
+
+    <LinearLayout
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lv_checkin_dialog"
+        android:gravity="right"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/iv_checkin_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icon_checkin_close"
+            android:layout_marginRight="20dp"/>
+    </LinearLayout>
+
+
+    </RelativeLayout>
+
+</RelativeLayout>
